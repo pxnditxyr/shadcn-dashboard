@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom'
 const links = [
   { name: "accordion", href: "accordion" },
   { name: "alerts", href: "alerts" },
+  { name: "buttons", href: "buttons" },
 ];
 
 export const DashboardLayout = () => {
