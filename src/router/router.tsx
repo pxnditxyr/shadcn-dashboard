@@ -1,5 +1,5 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { AccordionPage, AlertsPage, ButtonsPage, DashboardLayout, DashboardPage, HomeLayout, HomePage } from '../routes'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
+import { AccordionPage, AlertDialogPage, AlertsPage, ButtonsPage, DashboardLayout, DashboardPage, HomeLayout, HomePage } from '../routes'
 
 export const router = createBrowserRouter([
   {
@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HomePage />
+        element: <Navigate to="/dashboard" replace={ true } />
       }
     ]
   },
@@ -31,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: 'buttons',
         element: <ButtonsPage />
+      },
+      {
+        path: 'alert-dialog',
+        element: <AlertDialogPage />
       }
     ]
   }

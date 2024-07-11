@@ -1,12 +1,20 @@
+import clsx from 'clsx';
+import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom'
 
 const links = [
   { name: "accordion", href: "accordion" },
   { name: "alerts", href: "alerts" },
   { name: "buttons", href: "buttons" },
+  { name: "alert dialog", href: "alert-dialog" },
 ];
 
+
 export const DashboardLayout = () => {
+
+  const [ sidebar, setSidebar ] = useState( false )
+
+
   return (
     <>
       <nav className="bg-white border-b border-gray-200 fixed z-30 w-full">
@@ -15,6 +23,7 @@ export const DashboardLayout = () => {
             <div className="flex items-center justify-start">
               <button
                 id="toggleSidebarMobile"
+                onClick={ () => setSidebar( !sidebar ) }
                 aria-expanded="true"
                 aria-controls="sidebar"
                 className="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
@@ -98,8 +107,14 @@ export const DashboardLayout = () => {
       <div className="flex overflow-hidden bg-white pt-16">
         <aside
           id="sidebar"
-          className="fixed hidden z-20 h-full top-0 left-0 pt-16 lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
+          className={
+            clsx(
+              "fixed z-20 h-full top-0 left-0 pt-16 lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75",
+              sidebar ? "" : "hidden"
+            )
+          }
           aria-label="Sidebar"
+
         >
           <div className="relative flex-1 flex flex-col min-h-0 borderR border-gray-200 bg-white pt-0">
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
@@ -110,6 +125,7 @@ export const DashboardLayout = () => {
                       <Link
                         to={ link.href }
                         className="text-base capitalize text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group"
+                        onClick={ () => setSidebar( false ) }
                       >
                         <span className="ml-3">{ link.name }</span>
                       </Link>
