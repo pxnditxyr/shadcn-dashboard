@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import { AccordionPage, AlertDialogPage, AlertsPage, ButtonsPage, DashboardLayout, DashboardPage, HomeLayout, HomePage } from '../routes'
+import { AccordionPage, AlertDialogPage, AlertsPage, BadgesPage, ButtonsPage, DashboardLayout, DashboardPage, DialogsPage, HomeLayout, HomePage } from '../routes'
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +35,14 @@ export const router = createBrowserRouter([
       {
         path: 'alert-dialog',
         element: <AlertDialogPage />
+      },
+      {
+        path: 'dialogs',
+        element: <DialogsPage />
+      },
+      {
+        path: 'badges',
+        element: <BadgesPage />
       }
     ]
   }
