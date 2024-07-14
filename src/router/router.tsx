@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import { AccordionPage, AlertDialogPage, AlertsPage, BadgesPage, ButtonsPage, DashboardLayout, DashboardPage, DialogsPage, HomeLayout, HomePage } from '../routes'
+import { AccordionPage, AlertDialogPage, AlertsPage, AvatarPage, BadgesPage, ButtonsPage, CalendarPage, DashboardLayout, DashboardPage, DialogsPage, HomeLayout, HomePage } from '../routes'
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +43,14 @@ export const router = createBrowserRouter([
       {
         path: 'badges',
         element: <BadgesPage />
+      },
+      {
+        path: 'calendar',
+        element: <CalendarPage />
+      },
+      {
+        path: 'avatar',
+        element: <AvatarPage />
       }
     ]
   }

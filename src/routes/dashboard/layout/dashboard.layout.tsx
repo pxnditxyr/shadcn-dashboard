@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom'
+import { Avatar, AvatarFallback, AvatarImage } from '../../../components/ui/avatar';
 
 const links = [
   { name: "accordion", href: "accordion" },
@@ -8,7 +9,9 @@ const links = [
   { name: "buttons", href: "buttons" },
   { name: "alert dialog", href: "alert-dialog" },
   { name: "dialogs", href: "dialogs" },
-  { name: "badges", href: "badges" }
+  { name: "badges", href: "badges" },
+  { name: "calendar", href: "calendar" },
+  { name: "avatar", href: "avatar" }
 ].sort( ( a, b ) => a.name.localeCompare( b.name ) );
 
 
@@ -99,9 +102,10 @@ export const DashboardLayout = () => {
             </div>
             <div className="flex items-center">
               {/* User Avatar */}
-              <div className="bg-blue-500 text-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-                PX
-              </div>
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
             </div>
           </div>
         </div>
