@@ -11,7 +11,9 @@ const links = [
   { name: "dialogs", href: "dialogs" },
   { name: "badges", href: "badges" },
   { name: "calendar", href: "calendar" },
-  { name: "avatar", href: "avatar" }
+  { name: "avatar", href: "avatar" },
+  { name: "cards", href: "cards" },
+  { name: "carousel", href: "carousel" },
 ].sort( ( a, b ) => a.name.localeCompare( b.name ) );
 
 
